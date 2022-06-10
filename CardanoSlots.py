@@ -4,7 +4,9 @@ SHELLY_UNIX = 1596491091
 SHELLY_SLOT = 4924800
 
 def getSlotFromUnixTime(ut):
-    return ut - SHELLY_UNIX + SHELLY_SLOT
+    slot = ut - SHELLY_UNIX + SHELLY_SLOT
+    print(f"Cardano slot is: '{slot}'")
+    return slot
 
 def getUTCEstimateFromSlot(slot):
     ts = SHELLY_UNIX + (slot - SHELLY_SLOT)
